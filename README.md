@@ -1,1 +1,1 @@
-# medusaJS-poc
+# Medusa.JS POC
