@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --paper: #f5efe6;
+    --paper-strong: #efe6d8;
+    --ink: #1f1c17;
+    --muted: #5b564d;
+    --accent: #f97316;
+    --accent-2: #0ea5e9;
+    --outline: rgba(31, 28, 23, 0.12);
+    --bg-base: var(--paper);
+    --bg-component: var(--paper-strong);
+    --bg-subtle: var(--paper-strong);
+    --bg-field: var(--paper-strong);
+    --bg-field-component: var(--paper-strong);
+    --bg-component-hover: rgba(239, 230, 216, 0.9);
+    --bg-field-hover: rgba(239, 230, 216, 0.9);
+    --bg-subtle-hover: rgba(239, 230, 216, 0.9);
+    --bg-base-hover: rgba(239, 230, 216, 0.8);
+    --bg-base-pressed: rgba(239, 230, 216, 0.9);
+    --bg-component-pressed: rgba(239, 230, 216, 0.9);
+    --bg-subtle-pressed: rgba(239, 230, 216, 0.95);
+    --bg-disabled: rgba(239, 230, 216, 0.8);
+    --button-neutral: var(--paper-strong);
+    --button-neutral-hover: rgba(239, 230, 216, 0.95);
+    --button-neutral-pressed: rgba(239, 230, 216, 0.95);
+    --border-base: var(--outline);
+    --border-strong: rgba(31, 28, 23, 0.2);
+  }
+
+  html {
+    background-color: var(--paper);
+  }
+
+  body {
+    color: var(--ink);
+    background-color: var(--paper);
+    font-family: "Space Grotesk", "IBM Plex Sans", sans-serif;
+    letter-spacing: -0.01em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    font-family: "Fraunces", "Iowan Old Style", serif;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: rgba(249, 115, 22, 0.22);
+    color: var(--ink);
+  }
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  input:focus ~ label,
+  input:not(:placeholder-shown) ~ label {
+    @apply -translate-y-2 text-xsmall-regular;
+  }
+
+  input:focus ~ label {
+    @apply left-0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 1px solid #212121;
+    -webkit-text-fill-color: #212121;
+    -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hero-grid {
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.18), transparent 55%),
+      radial-gradient(circle at 80% 10%, rgba(14, 165, 233, 0.16), transparent 50%),
+      linear-gradient(135deg, rgba(31, 28, 23, 0.08), transparent 45%);
+  }
+
+  .glass-panel {
+    background: rgba(245, 239, 230, 0.78);
+    border: 1px solid var(--outline);
+    box-shadow: 0 24px 60px rgba(31, 28, 23, 0.18);
+    backdrop-filter: blur(18px);
+  }
+
+  .grain {
+    background-image: radial-gradient(rgba(31, 28, 23, 0.08) 1px, transparent 0);
+    background-size: 6px 6px;
+    mix-blend-mode: multiply;
+    opacity: 0.12;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 12s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float-fast 8s ease-in-out infinite;
+  }
+
+  .animate-rise {
+    animation: rise-in 0.9s ease-out both;
+  }
+
+  .bg-white {
+    background-color: var(--paper-strong) !important;
+  }
+
+  .bg-white\/90 {
+    background-color: rgba(245, 239, 230, 0.9) !important;
+  }
+
+  .bg-white\/80 {
+    background-color: rgba(245, 239, 230, 0.82) !important;
+  }
+
+  .bg-white\/75 {
+    background-color: rgba(245, 239, 230, 0.78) !important;
+  }
+
+  .bg-white\/70 {
+    background-color: rgba(245, 239, 230, 0.72) !important;
+  }
+
+  .bg-white\/60 {
+    background-color: rgba(245, 239, 230, 0.64) !important;
+  }
+}
+
+@layer components {
+  .content-container {
+    @apply max-w-[1440px] w-full mx-auto px-6;
+  }
+
+  .contrast-btn {
+    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+  }
+
+  .text-xsmall-regular {
+    @apply text-[10px] leading-4 font-normal;
+  }
+
+  .text-small-regular {
+    @apply text-xs leading-5 font-normal;
+  }
+
+  .text-small-semi {
+    @apply text-xs leading-5 font-semibold;
+  }
+
+  .text-base-regular {
+    @apply text-sm leading-6 font-normal;
+  }
+
+  .text-base-semi {
+    @apply text-sm leading-6 font-semibold;
+  }
+
+  .text-large-regular {
+    @apply text-base leading-6 font-normal;
+  }
+
+  .text-large-semi {
+    @apply text-base leading-6 font-semibold;
+  }
+
+  .text-xl-regular {
+    @apply text-2xl leading-[36px] font-normal;
+  }
+
+  .text-xl-semi {
+    @apply text-2xl leading-[36px] font-semibold;
+  }
+
+  .text-2xl-regular {
+    @apply text-[30px] leading-[48px] font-normal;
+  }
+
+  .text-2xl-semi {
+    @apply text-[30px] leading-[48px] font-semibold;
+  }
+
+  .text-3xl-regular {
+    @apply text-[32px] leading-[44px] font-normal;
+  }
+
+  .text-3xl-semi {
+    @apply text-[32px] leading-[44px] font-semibold;
+  }
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes float-fast {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes rise-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
