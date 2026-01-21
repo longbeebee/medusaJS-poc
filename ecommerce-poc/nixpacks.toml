@@ -1,8 +1,15 @@
+[phases.setup]
+nixPkgs = ["nodejs_18", "yarn"]
+
 [phases.install]
-cmds = ["npm install"]
+cmds = [
+  "yarn install --frozen-lockfile"
+]
 
 [phases.build]
-cmds = ["CI='' npx medusa build"]
+cmds = [
+  "yarn medusa build"
+]
 
 [start]
-cmd = "npm run start"
+cmd = "yarn start"
