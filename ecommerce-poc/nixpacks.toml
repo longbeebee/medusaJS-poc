@@ -8,9 +8,8 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "yarn medusa db:migrate",
   "yarn medusa build"
 ]
 
 [start]
-cmd = "yarn start"
+cmd = "yarn medusa db:migrate && yarn start"
