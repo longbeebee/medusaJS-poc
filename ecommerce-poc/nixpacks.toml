@@ -12,4 +12,4 @@ cmds = [
 ]
 
 [start]
-cmd = "yarn medusa db:migrate && yarn start"
+cmd = "yarn medusa build && yarn medusa db:migrate && yarn start"
