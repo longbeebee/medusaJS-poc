@@ -8,8 +8,8 @@ cmds = [
 
 [phases.build]
 cmds = [
-  "yarn medusa build"
+  "yarn build"     
 ]
 
 [start]
-cmd = "yarn start"
+cmd = "cd .medusa/server && yarn install && yarn predeploy && yarn start"
