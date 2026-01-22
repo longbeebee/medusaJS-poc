@@ -8,6 +8,7 @@ cmds = [
 
 [phases.build]
 cmds = [
+  "yarn medusa db:migrate",
   "yarn medusa build"
 ]
 
